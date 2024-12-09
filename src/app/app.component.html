@@ -1,36 +1,46 @@
-<div *ngIf="simulationSteps.length > 0">
-  <h2>Simulation de Feu de Forêt - Étape {{ currentStep + 1 }}</h2>
+<div class="simulation-card" *ngIf="simulationSteps.length > 0">
+  <mat-card>
+    <mat-card-header class="legend">
+      <mat-card-title>Simulation de Feu de Forêt - Étape {{ currentStep + 1 }}</mat-card-title>
+    </mat-card-header>
+    <!-- Legend for the colors -->
+    <div class="legend">
+      <div class="legend-item">
+        <div class="color-box empty"></div>
+        <span>Vide (EMPTY)</span>
+      </div>
+      <div class="legend-item">
+        <div class="color-box fire"></div>
+        <span>Feu (FIRE)</span>
+      </div>
+      <div class="legend-item">
+        <div class="color-box ash"></div>
+        <span>Cendres (ASH)</span>
+      </div>
+    </div>
 
-  <!-- Legend for the colors -->
-  <div class="legend">
-    <div class="legend-item">
-      <div class="color-box empty"></div>
-      <span>Vide (EMPTY)</span>
-    </div>
-    <div class="legend-item">
-      <div class="color-box fire"></div>
-      <span>Feu (FIRE)</span>
-    </div>
-    <div class="legend-item">
-      <div class="color-box ash"></div>
-      <span>Cendres (ASH)</span>
-    </div>
-  </div>
-
-  <div class="forest">
-    <div *ngFor="let row of simulationSteps[currentStep].grid; let rowIndex = index" class="row">
-      <div *ngFor="let cell of row; let colIndex = index" class="cell" [ngClass]="{
+    <div class="forest">
+      <div *ngFor="let row of simulationSteps[currentStep].grid; let rowIndex = index" class="row">
+        <div *ngFor="let cell of row; let colIndex = index" class="cell" [ngClass]="{
         empty: cell.state === 'EMPTY',
         fire: cell.state === 'FIRE',
         ash: cell.state === 'ASH'
       }">
-        <!-- {{ cell.state }} -->
+          <!-- {{ cell.state }} -->
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="navigation-buttons">
-    <button (click)="previousStep()" [disabled]="currentStep === 0">Précédent</button>
-    <button (click)="nextStep()" [disabled]="currentStep === simulationSteps.length - 1">Suivant</button>
-  </div>
+    <mat-card-actions class="legend">
+      <button mat-button (click)="previousStep()" [disabled]="currentStep === 0">Précédent</button>
+      <button mat-button (click)="nextStep()" [disabled]="currentStep === simulationSteps.length - 1">Suivant</button>
+
+      <button mat-button (click)="toggleAutoRun()">
+        {{ autoRunning ? 'Stop Auto Run' : 'Start Auto Run' }}
+      </button>
+
+      <button mat-button (click)="loadSimulation()">Nouvelle Simulation</button>
+
+    </mat-card-actions>
+  </mat-card>
 </div>
