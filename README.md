@@ -24,3 +24,5 @@ Vous verrez l'interface graphique qui communique avec le back-end. Elle enverra 
 
 # Explication de l'interaction
 Le front-end envoie une requête HTTP GET à l'API /api/simulation/simulate du back-end pour récupérer les données de simulation. Ces données sont ensuite affichées graphiquement dans l'interface pour visualiser l'évolution du feu dans la forêt selon les paramètres définis dans la configuration du back-end.
+
+![Alt text](https://github.com/nguyentuan132/forest-fire-simulator-angular/blob/main/src/assets/simul.png)
