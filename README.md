@@ -29,6 +29,6 @@ Le front-end envoie une requête HTTP GET à l'API /api/simulation/simulate du b
 
 
 ## Fonctionnement des boutons dans l'interface :
-### 1. L'utilisateur peut naviguer entre les étapes de la simulation en utilisant les boutons "Précédent" et "Suivant".
-### 2. Si l'auto-run est activé, la simulation avancera automatiquement à chaque étape sans avoir besoin de cliquer sur les boutons "Précédent" ou "Suivant".
-### 3. L'utilisateur peut réinitialiser la simulation en cliquant sur "Nouvelle Simulation", ce qui commencera une nouvelle série d'événements de simulation.
+- 1. L'utilisateur peut naviguer entre les étapes de la simulation en utilisant les boutons "Précédent" et "Suivant".
+- 2. Si l'auto-run est activé, la simulation avancera automatiquement à chaque étape sans avoir besoin de cliquer sur les boutons "Précédent" ou "Suivant".
+- 3. L'utilisateur peut réinitialiser la simulation en cliquant sur "Nouvelle Simulation", ce qui commencera une nouvelle série d'événements de simulation.
