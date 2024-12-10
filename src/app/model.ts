@@ -1,12 +1,12 @@
-export interface Cell {
-  x: number;
-  y: number;
-  state: 'EMPTY' | 'FIRE' | 'ASH';  // État de la cellule
+export enum State {
+  EMPTY = 'EMPTY',
+  FIRE = 'FIRE',
+  ASH = 'ASH'
 }
 
 
 export interface Forest {
-  grid: Cell[][];  // Grille de cellules représentant la forêt
-  height: number;   // Hauteur de la forêt
-  width: number;    // Largeur de la forêt
+  height: number;
+  width: number;
+  grid: State[][];
 }

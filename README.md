@@ -1,27 +1,26 @@
-# ForestFireSimulatorAngular
+## 1. Démarrer le serveur Spring Boot (Back-End)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.2.
+Cela lancera le serveur Spring Boot sur le port 8080. Le front-end pourra alors se connecter à ce serveur pour récupérer les données de la simulation.
 
-## Development server
+## 2. Démarrer l'interface front-end (Angular)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Ouvrez un terminal dans le répertoire du projet front-end.
 
-## Code scaffolding
+Exécutez la commande suivante pour démarrer le serveur de développement Angular sur le port par défaut 4200 :
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```bash
+npm start
+```
+Cela démarrera l'application front-end sur http://localhost:4200.
 
-## Build
+## 3. Accéder à l'application
+Ouvrez votre navigateur web et accédez à l'URL suivante :
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```bash
+http://localhost:4200
+```
 
-## Running unit tests
+Vous verrez l'interface graphique qui communique avec le back-end. Elle enverra des requêtes à l'API du serveur Spring Boot pour récupérer et afficher les résultats de la simulation.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+# Explication de l'interaction
+Le front-end envoie une requête HTTP GET à l'API /api/simulation/simulate du back-end pour récupérer les données de simulation. Ces données sont ensuite affichées graphiquement dans l'interface pour visualiser l'évolution du feu dans la forêt selon les paramètres définis dans la configuration du back-end.

@@ -7,11 +7,15 @@ import { Forest } from '../model';
   providedIn: 'root',
 })
 export class ForestService {
-  private readonly apiUrl = 'http://localhost:8080/api/simulation/simulate';
+  private readonly simulateEndpoint = 'http://localhost:8080/api/simulation/simulate';
 
   constructor(private readonly http: HttpClient) { }
 
+  /**
+   * Fetches the forest fire simulation steps.
+   * @returns {Observable<Forest[]>} An observable of the forest states during simulation.
+   */
   getSimulation(): Observable<Forest[]> {
-    return this.http.get<Forest[]>(this.apiUrl);
+    return this.http.get<Forest[]>(this.simulateEndpoint);
   }
 }
